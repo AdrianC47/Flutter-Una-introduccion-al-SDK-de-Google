@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main(){
+// Importaciones que nosotros escribimos
+// import 'src/app.dart';
+import 'package:contador/src/app.dart';
 
-  runApp(new MyApp()); //con este comando mando a ocrrer mi aplicacion
-
+void main() {
+  runApp(MyApp()); //con este comando mando a ocrrer mi aplicacion
 }
 
-class MyApp extends StatelessWidget{
 
-  @override
-  Widget build (context){
-
-    return MaterialApp(
-      home: Center(
-        child: Text("Hola Amigo") ,
-      )
-    );
-  }
-}
