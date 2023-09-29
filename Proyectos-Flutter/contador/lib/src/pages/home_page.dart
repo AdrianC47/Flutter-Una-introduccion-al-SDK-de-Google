@@ -23,11 +23,13 @@ class HomePage extends StatelessWidget{
 
         ),
         floatingActionButton: FloatingActionButton(
+          
           child: Icon(Icons.add),
           onPressed: () {
             print("Hola Amigo!!"); // aqui se pone si o si el ; debido a que estoy dentro de una lista de argumentos de una funcion, es opcional pero es lo ideal
           },
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     ); //
   }
 }
