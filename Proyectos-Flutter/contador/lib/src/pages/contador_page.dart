@@ -18,36 +18,39 @@ class _ContadorPageState extends State<ContadorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // Una app bar para mostrarla al tope del Scaffold
-        title: Text("Titulo"),
-        centerTitle: true,
-      ),
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'Número de clicks:',
-            style: _estiloTexto,
-          ),
-          Text(
-            '$_conteo',
-            style: _estiloTexto,
-          )
-        ],
-      )),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          // print("Hola Amigo!!"); // aqui se pone si o si el ; debido a que estoy dentro de una lista de argumentos de una funcion, es opcional pero es lo ideal
-          //como se esta trabajando con un StatefullWidget pues necesito que se redibuje todo el widget para ello llamo al metodo setState
-          setState(() {
-            _conteo++;
-          });
-        },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-    ); //
+        appBar: AppBar(
+          // Una app bar para mostrarla al tope del Scaffold
+          title: Text("Titulo"),
+          centerTitle: true,
+        ),
+        body: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Número de clicks:',
+              style: _estiloTexto,
+            ),
+            Text(
+              '$_conteo',
+              style: _estiloTexto,
+            )
+          ],
+        )),
+        floatingActionButton: _crearBotones()); //
+  }
+
+  Widget _crearBotones() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        SizedBox(width: 30.0,), //esto es como un div en html que lo que hara es actuar como un separador
+        FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: null),
+        Expanded(child: SizedBox()),//es obligatorio un child para el Expanded
+        FloatingActionButton(child: Icon(Icons.remove), onPressed: null),
+        SizedBox(width: 5.0,),
+        FloatingActionButton(child: Icon(Icons.add), onPressed: null),
+      ],
+    );
   }
 }
