@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {// El BuildContext contiene la informacion relevante al arbol de widget. El BuildContext se utiliza para ubicar el widget en la jerarquía de widgets.
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
