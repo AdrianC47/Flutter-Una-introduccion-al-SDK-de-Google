@@ -44,13 +44,30 @@ class _ContadorPageState extends State<ContadorPage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        SizedBox(width: 30.0,), //esto es como un div en html que lo que hara es actuar como un separador
-        FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: null),
-        Expanded(child: SizedBox()),//es obligatorio un child para el Expanded
-        FloatingActionButton(child: Icon(Icons.remove), onPressed: null),
-        SizedBox(width: 5.0,),
-        FloatingActionButton(child: Icon(Icons.add), onPressed: null),
+        SizedBox(
+          width: 30.0,
+        ), //esto es como un div en html que lo que hara es actuar como un separador
+        FloatingActionButton(
+            child: Icon(Icons.exposure_zero), onPressed: _reset),
+        Expanded(child: SizedBox()), //es obligatorio un child para el Expanded
+        FloatingActionButton(child: Icon(Icons.remove), onPressed: _sustraer),
+        SizedBox(
+          width: 5.0,
+        ),
+        FloatingActionButton(child: Icon(Icons.add), onPressed: _agregar),
       ],
     );
+  }
+
+  void _agregar() {
+    setState(() => _conteo++);
+  }
+
+  void _sustraer() {
+    setState(() => _conteo--);
+  }
+
+  void _reset() {
+    setState(() => _conteo = 0);
   }
 }
